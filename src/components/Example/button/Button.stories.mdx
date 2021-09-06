@@ -1,0 +1,81 @@
+<!-- // import React from 'react'; -->
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Button } from 'components';
+import theme from 'styles';
+import { ThemeProvider } from '@material-ui/core/styles';
+
+<Meta title="Components/ARPlus/Button" component={Button} />
+
+<style>{`
+    .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 6px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  `}</style>
+
+# Allianz Retire Plus Button Component
+
+export const Template = (args) => createCompent({ args });
+function createCompent({ args }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <Button {...args}></Button>
+    </ThemeProvider>
+  );
+}
+
+<div className="subheading">A Large Primary Card Component</div>
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      color: 'primary',
+      variant: 'contained',
+      label: 'Primary Large',
+      size: 'large',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<div className="subheading">A Medium Secondary Card Component</div>
+
+<Canvas>
+  <Story
+    name="Secondary"
+    args={{
+      color: 'secondary',
+      variant: 'contained',
+      label: 'Secondary Medium',
+      size: 'medium',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<div className="subheading">A Small Default Outlined Card Component</div>
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      color: 'default',
+      variant: 'outlined',
+      label: 'Default Small',
+      size: 'small',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

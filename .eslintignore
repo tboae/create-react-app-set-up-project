@@ -1,0 +1,16 @@
+node_modules/
+build/
+dist/
+public/
+scripts/
+.next/
+.out/
+__coverage__/
+__reports__/
+*.config.js
+*rc.js
+plopfile.js
+jest.*.js
+tsconfig.json
+package.json
+scripts/

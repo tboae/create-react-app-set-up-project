@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { TextField } from '@material-ui/core';
+import Paper from '@material-ui/core/Paper';
+import theme from 'styles';
+import { ThemeProvider } from '@material-ui/core';
+
+<Meta title="ARPlus/Material-UI" component={TextField} />
+
+<style>{`
+    .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 6px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  `}</style>
+
+<h1>Allianz Retire Plus Material UI Component</h1>
+
+<div className="subheading">Various versions of the AR+ component</div>
+
+<!-- Template must be at the top of the file -->
+
+export const Template = (args) => createCompents({ args });
+function createCompents({ args }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <TextField {...args} />
+    </ThemeProvider>
+  );
+}
+
+A Simple TextField Component
+
+<Canvas>
+  <Story
+    name="Simple TextField"
+    args={{
+      label: 'First Name',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

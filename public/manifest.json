@@ -1,0 +1,9 @@
+{
+  "short_name": "tboae: React Skeleton Project",
+  "name": "React Skeleton Project",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
