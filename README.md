@@ -1,14 +1,24 @@
 # Create React App Skeleton Project
 
-**contains: Storybook, Material UI, ESlint, Prettier and husky**
+**_contains: Storybook, Material UI, ESlint, Prettier and husky_**
 
+## `Getting up and running quickly.`
+After cloning the project from GitHub 
+at a terminal command line, type:
+
+```js
+npm install 
+```
+
+to install all the required packages specified in package.json.
+
+
+## `Background and the philosophy behind the decisions`
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
     npx create-react-app [project-name]
-
-<!-- ![Screenshot](images/ProjectLayout.png) -->
 
 ## `Visual Studio Code`
 
@@ -205,13 +215,66 @@ Material UI also provides a huge set of icons that are easily imported, implemen
 
     npx sb init
 
-### `Project Structure`
+### `Project Structure:` 
+<br />
 
-    jsconfig.json\
-    .env
+![Screenshot](document/ProjectStructure.png)
 
-### `Folder Structure`
+| Folder | Sub-Folder      | Description |
+|--------|-----------------|-------------|
+| `.storyBook` || Storybook Config files |
+| `.vscode` || Local VS Code preferences |
+| `\document` || Images or assets used in any README.md documentation|
+| `\src` || Top-level source code folder         |
+|| `\components` | The custom component folder. <br /> This should stay relatively empty and and we should only add to or change the <br /> base Material Component Library if it is necessary. <br /> See below for details|
+|| `\composites` | Local VSCode config and preferences |
+|| `\context` | React API Context folders and files for state management |
+|| `\pages` | A page is basically a component that can be reached through a URL or via the router. <br /> It is made up of one or more base components and/or composite components. A page is (normally) wrapped in a Layout and Theme component and inherits the application themes and styling from the theme in the styles folder.  |
+|| `\shared` | Any code that is shared between components or between projects. Example: Backend API communication via Axios |
+|| `\stories` | Create stores to demonstrate or test overriding CSS or Pros for individual components. For example, if the base CSS is change for a button but not the base button component itself, a stories to demo those changes would be created and documented here.|
+|| `\utilities` | Enums or data formatting code files.|
+|| `index.js` | React Application entry point |
+| `.eslintignore`|| Configuration file to configure eslint to ignore specified files and folders. |
+| `.eslintrc` ||  eslint linting rules configuration file. |
+| `.gitignore` || A config file that specifies files and folder content that we do <b>not</b> commit to github.<br /> An example would be, the node_module folder that contains all the 3rd part libraries installed with our project |
+| `.prettierignore` || Configuration file to configure prettier to ignore specified files and folders when formatting code files. |
+| `.prettierrc`| | Prettier config files to specify options and formatting preferences. |
+| `jsconfig.json`|| A simple config declaring the base code folder (\src) that the application should use. This allows to nto require to specify the relative path when importing components or .js files, instead only using the folder name.|
+| `package-lock.json` || Standard package-lock.json file specifying an exact version dependency tree. |
+| `package.json`|| Standard package.json file to manage required project dependencies and basic application configuration.|
+| `README.md`|| This is me. I am the README.|
+| `yarn.lock`|| Installed as part of the create-react-app set-up. Not used with npm installs.|
+
+<br />
+
+### `Folder Structure:`
+
+<br />
+
+![Screenshot](document/ComponentFolderStructure.png)
+
+<br />
+
+<p> There should be very little need to create custom components. Material UI is an extensive component library that is fully customisable for our needs. If, on the very rare occasion, we do need to create a custom component, it must adhere to the following folder structure and include all the files outlined below. In particular, it must have a READ.md file with the reason for the custom component being added.</p>
+
+<br />
+
+| Folder | File | Description |
+|--------|------|-------|
+| `\compoments` ||  |
+| `\compomentName` || |
+|  |`[ComponentName].jsx`| A React component built with a .jsx file extension. Ensure that the first letter of each work of the component is capitalised and that within the component, all props that maybe changed have their propTypes and default props specified. |
+|  |`[ComponentName].mdx`| A storybook file with a .mdx extension. The addition of a .mdx extension <br /> allows for greater control of the component documentation |
+|  |`index.js`| File to export the component via the convention of a index.js |
+|  |`style.js`| The style that are specific to the component. These must be used very sparingly and if we do need additional customised CSS or styling, we must include notes on the need to use additional styling outside of the wrapped theme from the styles folder. |
+|  |`[ComponentName].md`| A readme file outlining the need to create or customise this component.  |
+| `index.js` || The component root folder index.js file. Export all component via a single reference to this file |
 
 ### `Useful VSCode Extensions`
+<br />
 
-1. Thunder Client
+1. Thunder Client <br />
+[Thunder (API) Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client).\
+A lightweight alternative to Postman that can be run directly from VS Code. 
+
+
