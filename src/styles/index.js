@@ -1,3 +1,3 @@
-import theme from './arplusExampleTheme.js';
+import theme from './exampleTheme.js';
 
 export default theme;
